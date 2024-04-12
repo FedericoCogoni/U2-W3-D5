@@ -2,7 +2,6 @@ let URL = "https://striveschool-api.herokuapp.com/api/product/"
 window.addEventListener("DOMContentLoaded", () => {
   loadProductCards()
 })
-//carico gli oggetti come card su index.html
 function loadProductCards() {
   fetch(URL, {
     method: "GET",
