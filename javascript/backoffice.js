@@ -84,6 +84,10 @@ function deleteProduct(productId) {
       if (!response.ok) {
         throw new Error("Unable to delete product")
       }
+      const alertResponse = document.querySelector(".alert")
+      if (alertResponse) {
+        alertResponse.remove()
+      }
       showResponse("Product deleted successfully!")
     })
     .catch(error => {
@@ -109,7 +113,6 @@ function loadProductDetails(productId) {
     .then(product => {
       console.log("Product details:", product)
       formProductDetails(product)
-      showResponse("Product modified successfully!")
     })
     .catch(error => {
       console.log("Error:", error)
