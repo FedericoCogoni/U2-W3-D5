@@ -47,15 +47,14 @@ function renderProductDetails(product) {
   card.style.maxWidth = "1000px"
   card.classList.add("card")
   card.innerHTML = `
-        <img src="${product.imageUrl}" class="card-img-top " alt="${product.name}">
-        <div class="card-body">
-          <h5 class="card-title">${product.name}</h5>
-          <p class="card-text">${product.description}</p>
-          <p class="card-text">Brand: ${product.brand}</p>
-          <p class="card-text">Price: $${product.price}</p>
-        </div>
-      `
-
+  <div class="card d-flex shadow-lg">
+  <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}">
+  <div class="card-body">
+    <h5 class="card-title display-4">${product.name}</h5>
+    <p class="card-text display-5">${product.description}</p>
+    <span class="badge bg-danger me-auto"><p class="card-text p-1 display-6"> € ${product.price}</p></span>
+    
+    </div>`
   const productCardContainer = document.getElementById("productCard")
   productCardContainer.appendChild(card)
 }

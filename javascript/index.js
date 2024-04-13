@@ -31,15 +31,17 @@ function renderProductCard(product) {
   const card = document.createElement("div")
   card.classList.add("col-md-4", "mb-4")
   card.innerHTML = `
-          <div class="card">
+          <div class="card d-flex shadow-lg">
             <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}">
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">${product.description}</p>
               <p class="card-text">Brand: ${product.brand}</p>
-              <p class="card-text">Price: $${product.price}</p>
-              <a href="details.html?id=${product._id}" class="btn btn-primary">Details</a>
-              <a href="backoffice.html?id=${product._id}" class="btn btn-secondary">Edit</a>
+              <div class="d-flex bd-highlight mb-1">
+              <span class="badge bg-primary me-auto bd-highlight"><p class="card-text p-1 h5"> € ${product.price}</p></span>
+              <a href="details.html?id=${product._id}" class="btn btn-primary  bd-highlight">Details</a>
+              <a href="backoffice.html?id=${product._id}" class="btn btn-secondary  bd-highlight">Edit</a>
+              </div>
             </div>
           </div>
         `
