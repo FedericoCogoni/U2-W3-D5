@@ -31,16 +31,18 @@ function renderProductCard(product) {
   const card = document.createElement("div")
   card.classList.add("col-md-4", "mb-4")
   card.innerHTML = `
-          <div class="card d-flex shadow-lg">
-            <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}">
+          <div class="card cardIndex d-flex shadow-lg ">
+            <a href="details.html?id=${product._id}"><img src="${product.imageUrl}" class="card-img-top" alt="${product.name}"></a>
             <div class="card-body">
-              <h5 class="card-title">${product.name}</h5>
+            <a href="details.html?id=${product._id} class=""><h5 class="card-title">${product.name}</h5></a>
               <p class="card-text">${product.description}</p>
               <p class="card-text">Brand: ${product.brand}</p>
               <div class="d-flex bd-highlight mb-1">
               <span class="badge bg-primary me-auto bd-highlight"><p class="card-text p-1 h5"> € ${product.price}</p></span>
-              <a href="details.html?id=${product._id}" class="btn btn-primary  bd-highlight">Details</a>
-              <a href="backoffice.html?id=${product._id}" class="btn btn-secondary  bd-highlight">Edit</a>
+              <a href="details.html?id=${product._id}" class="btn btn-primary bd-highlight " data-bs-toggle="tooltip" title="Show more details">
+              Details
+            </a>
+              <a href="backoffice.html?id=${product._id}" class="btn btn-secondary bd-highlight"  data-bs-toggle="tooltip" title="Edit your product">Edit</a>
               </div>
             </div>
           </div>
@@ -48,3 +50,9 @@ function renderProductCard(product) {
   const productCardsContainer = document.getElementById("productCards")
   productCardsContainer.appendChild(card)
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(
+    tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
+  )
+})

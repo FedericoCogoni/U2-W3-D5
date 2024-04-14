@@ -45,18 +45,19 @@ window.addEventListener("DOMContentLoaded", () => {
   if (productId) {
     const submitButton = document.getElementById("submitButton")
     const editButton = document.getElementById("editButton")
-    const deleteButton = document.getElementById("deleteButton") // Aggiunto il pulsante "Delete"
+    const deleteButton = document.getElementById("deleteButton")
+    const resetButton = document.getElementById("resetForm")
 
     submitButton.classList.add("d-none")
+    resetButton.classList.add("d-none")
     editButton.classList.remove("d-none")
-    deleteButton.classList.remove("d-none") // Mostrare il pulsante "Delete"
+    deleteButton.classList.remove("d-none")
 
     editButton.addEventListener("click", () => {
       editProduct(productId)
     })
 
     deleteButton.addEventListener("click", () => {
-      // Aggiunto event listener per il pulsante "Delete"
       deleteProduct(productId)
     })
 
@@ -159,3 +160,6 @@ function showResponse(message) {
     alertResponse.remove()
   }, 3000)
 }
+document.getElementById("resetForm").addEventListener("click", function () {
+  document.getElementById("backofficeForm").reset()
+})

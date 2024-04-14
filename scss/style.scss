@@ -2,3 +2,20 @@
 .card {
   font-family: Roboto;
 }
+a {
+  text-decoration: none;
+}
+.cardIndex:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+  border: white solid;
+}
+
+.btn {
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}

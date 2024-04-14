@@ -50,10 +50,13 @@ function renderProductDetails(product) {
   <div class="card d-flex shadow-lg">
   <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}">
   <div class="card-body">
-    <h5 class="card-title display-4">${product.name}</h5>
-    <p class="card-text display-5">${product.description}</p>
-    <span class="badge bg-danger me-auto"><p class="card-text p-1 display-6"> € ${product.price}</p></span>
-    
+    <h5 class="card-title display-4 pb-4 pt-4">${product.name}</h5>
+    <hr>
+    <p class="card-text display-5 pb-4 ">${product.description}</p>
+    <div class="d-flex justify-content-between text-center pb-3">
+    <span class="badge bg-danger "><p class="card-text fw-bold p-2 display-6"> € ${product.price}</p></span>
+    <a href="#" class="btn btn-warning card-text p-4 fw-bold fs-5">Contact the seller!</a>
+    </div>
     </div>`
   const productCardContainer = document.getElementById("productCard")
   productCardContainer.appendChild(card)
